@@ -1,5 +1,0 @@
-www es World Wide Web
-
-HTML signficia HyperText Marqued Language, ó LENGUAJE DE MARCADO DE HIPERTEXTO.
-Un LENGUAJE DE MARCADO es agarrar texto y presentarlo de manera diferente, es decir al momento de escribir las etiquetas y que se interpretes, por ejemplo al colocar <b></b> significa que sería un texto en negritas.
-
