@@ -1,0 +1,23 @@
+Para las unidades de medida, no está bien siempre estar usando pixeles.
+
+- (MEDIDAS FISICAS) Se pueden usar cm, pulgadas, o ese tipo de medidas "convencionales", pero mayormente son útiles para el caso de realizar impresiones, es decir en nuestra pantalla, dependiendo de las medidas se mostrará de difernte manera, pero si nosotros mandamos a imprimir dicha pantalla, la medida de cm siempre será constante en la hoja.
+
+- (MEDIDAS ABSOLUTAS) Estas medidas son ideales para trabajar con lo digital y queremos que tengan una medida en específico, el único problema de estas, es que por lo mismo de que son absolutas, al momento de querer realizar un contenido responsive, estas no se irán adaptando dependiendo de la pantalla ya que como su nombre lo dice, SON ABSOLUTAS. Por ejemplo los pixeles.
+
+- (UNIDADES REALTIVAS) Estas medidas dependen de algo más para generarse, es decir que por ejemplo adaptan su medida dependiendo del contenedor y encajan bastante bien para el caso del responsive. Un ejemplo es usar los porcentajes
+
+LOS PORCENTAJES NO SE SUELEN USAR EN MARGIN, PADDING O TAMAÑO DE LETRA
+
+- EM: Una muy buena forma de medir, es una medida relativa y básicamente valdrá lo mismo que el font size del elemento padre, es decir que si tenemos un div, y dentro tenemos un p, si el div tiene 20px como medida, y el p tiene 1em como medida, pues el p tendría la medida de 20px. Para este caso SI EL ELEMENTO PADRE NO TIENE DEFINIDO UN ELEMENTO FONT SIZE, IRÁ A BUSCAR AL SIGUIENTE ELEMENTO PADRE, es decir si se tiene un div, despúes un p y desúés un span, el div tiene 20px, el p no tiene nada y el span tiene 1em, se irá a buscar al p, pero al no tener nada, agarrará la medida del div, CABE RESALTAR QUE EN CASO DE QUE NINGUNO TENGA, SE TOMARÁ LA MEDIDA PREDETERMINADA (16px).
+
+- REM: Es lo mismo que el EM, solo que en vez de hacerlo con el elemento padre, lo hace con el elemento raíz, en este caso por ejemplo iría a buscar al elemento HTML, aunque se tenga un div como elemento padre, irá a buscar las medidas del elemento raíz. RootEM.
+
+- Otras medidas son las que ya ocupo de VH o VW, es común para hacer ventanas modales.
+
+** CUÁNDO USAR CADA UNO **
+
+- PARA TAMAÑO FUENTE, ESPACIADO, LA TIPOGRAFÍA EN GENERAL, em y rem son las ideales.
+
+- PARA ARMAR EL LAYAOUT, LAS DIMENSIONES DE LOS ELEMENTOS, se suelen usar porcentajes, em, rem, vh, vw
+
+- SI QUEREMOS QUE ALGÚN ELEMENTO TENGA UNA RESOLUCIÓN EXACTA SIN QUE TNGA ALGÚN TIOPO DE DEFORMACIÓN EN SUS MEDIDAS DEPENDIENDO DEL DISPOSITIVO, se usan pixeles.
