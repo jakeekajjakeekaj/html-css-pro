@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="form-input">
+    <!-- Los select sirven para desplegar una lista y seleccionar cosas -->
+    <select name="type-of-user">
+        <!-- Los value son para javascript -->
+        <option value="user1">OPCIONA 1</option>
+        <option value="user2">OPCION 2</option>
+    </select>
+</div>
+
+<!-- De esta manera podemos mostrar autollenaodos al usuario en vez de tener que escribir todo el contenido -->
+<!-- SE PODRÍA DECIR QUE LOS datalist SON COMO UNA COMBINACIÓN ENTRE UN SELECT Y UN INPUT -->
+<div class="form-input">
+    <label>REFERENTE
+        <input list="referente" name="referente">
+        <datalist id="referente" name="type-of-user-2">
+            <option value="user1">OPCION 1</option>
+            <option value="user2">OPCION 2</option>
+            <!-- También se puede colocar directamente solo el value en vez del texto -->
+            <option value="OPCION 3"></option>
+            <option value="Jakeekajjakeekaj">Programador e Ingeniero</option>
+        </datalist>
+    </label>
+</div>
+    
+</body>
+</html>

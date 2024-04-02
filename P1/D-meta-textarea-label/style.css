@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.form-textarea {
+    margin: 10px;
+}
+
+textarea {
+    min-width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    resize: none;   /* Esto indica que no se puede reconfigurar el tamaño del text area dentro de la página, también se puede aplicar la propiedad both que es la que viene por defecto, o la propiedad de vertical u horizontal para que solo se modifiaque hacia cierto eje */
+    min-height: 40px;   /* CABE MENCIONAR QUE NO ES DEL TODO RECOMENDABLE APLICAR LO QUE SERÍA EL MIN-HEIGHT YA QUE EXISTE LA PROPIEDAD DE ROWS LO CUAL FACILITA MUCHO LA TAREA Y EVITA QUE EL TEXTO PUEDA QUEDAR CORTADO 
+    +/
+    /* form-sizing: content;   Posteriormente saldrá esta opción, pero básicamente la caja se irá modificando a la vertical dependiendo de la cantidad de contenido que haya dentro */
+    margin-top: 4px;
+}
+
+/* LOS LABEL SON ELEMENTOS EN LINEA, POR LO QUE DARLE MARGIN O PADDING NO ES COMO CON LOS DEMÁS ELEMENTOS, ASÍ MISMO AL DARLE CLICK AL LABEL, PODEMOS FOCUSEAR AL INPUT, DE ESTA MANERA SE PODRÍA DECIR QUE "AGRANDAMOS" LA ZONA PARA DARLE CLICK */
+label {
+    font-size: 0.9em;
+}

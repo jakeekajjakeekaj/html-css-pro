@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGINA</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- SI SE QUIEREN INSERTAR FAVICONS, LO IDEAL ES QUE SU TAMAÑO SEA DE 32X32 O DE 64X64, NO SE NECESITA UN TAMAÑO MUY GRANDE PARA UN ÍCONO QUE ES PEQUEÑO -->
+    <!-- <meta name="robots" content="nofollow"> INDICA QUE NO SE PUEDE ENTRAR A LA PÁGINA PARA INDEXARLA EN LOS MOTORES DE BÚSQUEDA -->
+    <!-- <meta name="robots" content="nosnippet"> ESTO LO QUE INDICA ES QUE GOOGLE NO PODRÁ MOSTRAR SNIPPETS DEL CONTENIDO DE UNA PÁGINA, ES DECIR QUE NO PODRÁ DAR COMO PEQUEÑAS PANTALLITAS DE NUESTRA PÁGINA EN EL MOTOR DE BÚSQUEDA -->
+    <!-- <meta name="robots" content="noarchive"> BÁSICAMENTE INDICA QUE NO SE PUEDE ALMACENAR LA INFORMACIÓN DENTRO DEL CACHÉ, ES DECIR POR DEFECTO GOOGLE GUARDA EN CACHÉ INFORMACIÓN DE LA PÁGINA, PARA QUE ASÍ LA PRÓXIMA VEZ QUE UNO ENTRE, SEA MÁS RÁPIDO, PERO ESTO NO SIRVE SI SE TIENE UNA PÁGINA QUE SIEMPRE SE ENCUENTRA EN CONSTANTE CAMBIO -->
+    <!-- REALMENTE NO SE RECOMIENDA USAR NINGUNA DE ESTAS, YA QUE PUEDE EMPEORAR AL CEO DE LA PÁGINA -->
+</head>
+<body>
+    
+    <div class="form-textarea">
+        <label for="mensaje">Mensaje</label>
+        <textarea placeholder="Deja tu mensaje" id="mensaje"></textarea> <!-- También se tiene una propiedad que sería readonly, solo que es una propiedad rara ya que solo sería un text area que solo se puede leer, desabled sirve para que ni el focus ni las respuestas al servidor sean enviadas, maxlength="140" limita la cantidad de caracteres a escribir dentro del text area, rows="7" de esta manera indicamos la cantidad de filas que se tendrán antes de que salte el scroll -->
+    </div>
+    <!-- PARA NO TENER QUE DARLE UN id A LOS ELEMENTOS Y NO USAR EL for, LO QUE SE PUEDE HACER ES: -->
+    <div class="form-textarea">
+        <label>Mensaje 2
+            <textarea placeholder="Deja tu mensaje"></textarea>
+        </label>
+    </div>
+
+</body>
+</html>

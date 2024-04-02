@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #666;
+}
+
+.form-input {
+    margin: 10px;
+}
+
+select, input {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 6px 8px;
+    /* Para este caso si se puede aplicar un fondo transparente en caso de que se quiera */
+    /* background-color: transparent; */
+}
+
+option {
+    /* Para este caso no se puede aplicar un fondo transparente cuando se tiene este tiopo de situaciones donde el fondo es diferente, entonces se tiene que igualar el color de fondo */
+    background-color: #666;
+    /* EN CASO DE QUE SE QUIERA CAMBIAR VARIAS COSAS DEL option SE TRABAJA CON UNA LIBRERÍA DE JS, ESTO SERÍA POR SI SE QUIERE CAMBIAR POR EJEMPLO EL ESPACIADO ENTRE CADA OPCIÓN */
+}
