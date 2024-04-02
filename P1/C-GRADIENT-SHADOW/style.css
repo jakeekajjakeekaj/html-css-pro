@@ -1,0 +1,53 @@
+body {
+  background-color: #f00;
+  margin: 0;
+  color: white;
+}
+
+/* COMO SE MUESTRA A CONTUNACION, LOS GRADIENTES MAYORMENTE SON UTILIZADOS PARA DAR UN EFECTO DE TRANSPARENCIA Y COLOCAR ASÍ UN TEXTO, EN VEZ DE DARLE UNA OPACIDAD BAJA A ALGUNA BOX, MEJOR SE UTILIZA UN GRADIENT PARA CONSEGUIR ESTE EFECTO */
+.box {
+  width: 300px;
+  height: 400px;
+  background: linear-gradient(#000a, transparent);
+  background: linear-gradient(
+    to left,
+    #000a,
+    transparent
+  ); /* De esta manera se consigue darle una direccón al gradient, pudiendo también colocar to right, to bottom y to top */
+  background: radial-gradient(
+    #0f0,
+    transparent
+  ); /* Este sería un efecto de gradiente, es decir que es como si pintara en un radio */
+  background: conic-gradient(#0f0, transparent); /* Realiza un efecto de cono */
+  margin: 0;
+  border-radius: 7px;
+  margin: auto;
+  margin-top: 20px;
+  border-top: 6px solid #900;
+  text-align: center;
+}
+
+.box-2 {
+  width: 300px;
+  height: 400px;
+  border-radius: 7px;
+  margin: auto;
+  margin-top: 20px;
+  border: 1px solid #000;
+  text-align: center;
+  box-shadow: 20px 20px 50px 10px #000; /* Cuantos pixeles se corre la sombra hacia la derecha (horizontalmente) | cuántos pixeles de corre hacia abajo (verticalmente) | cuánto será el defuminado (desenfoque) | cuánto se expandirá la sombra | color */
+  box-shadow: 0 0 40px 0 #0007; /* Este es el tipo de sombra que más se suele utilizar, es decir que no tiene dirección en eje x, y, no tiene agrandamiento, únicamente el desenfoque y el color negro */
+}
+
+.box-2 p {
+  text-shadow: 0 0 4px #0009; /* Son los mismos parámetros que con box shadow, con la punica diferencia de que aquí no existe el expansor */
+}
+
+/* SI NOSOTROS TUVIÉRAMOS UNA IMAGEN CON CANAL ALFA, COMO EN EL CASO DE LAS PNG QUE TIENEN FONDOS TRANSPARENTES, PODEMOS TENER filter:
+
+    img {
+        width: 200px;
+        filter: drop-shadow(0 0 3px #0009;  Esto sirve para poder darle una sombra a una imagen con fondo transparente, de esta manera ya no se realizaría un bordeado medio feo, sino que se realizaría el bordeado a través de lo que ya es el contenido
+    }
+
+*/

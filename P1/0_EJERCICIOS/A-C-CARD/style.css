@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ccc;
+    font-family: sans-serif;
+    color: #fff;
+}
+
+.card {
+    background-color: #f95;
+    text-align: center;
+    width: 270px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0 0 25px #0005;
+    border-radius: 8px;
+}
+
+.card-title {
+    padding-top: 5px;
+    font-size: 22px;
+    margin: 0;
+}
+
+.card-subtitle {
+    margin-bottom: 9px;
+    font-size: 13px;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+.card-content {
+    font-size: 9px;
+    padding: 8px 18px;
+    /* background-color: #fa6; */
+    text-align: justify;
+}
+
+.card-img {
+    width: 200px;
+    border-radius: 50%;
+}
