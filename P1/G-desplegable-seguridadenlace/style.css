@@ -1,0 +1,23 @@
+* :not(ul) {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #eee;
+}
+
+details {
+    padding: 20px;
+}
+
+li {
+    /* margin: 0 20px; */
+    padding: initial;
+}
+
+a {
+    color: 69f;
+    text-decoration: none;
+}

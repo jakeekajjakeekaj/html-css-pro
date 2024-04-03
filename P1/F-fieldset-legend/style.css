@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #eee;
+}
+
+.inputs-container {
+    /* margin: 4px 8px; */
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    border: 1px solid #666;
+    border-radius: 4px;
+    margin: 4px 0;
+}
+
+fieldset {
+    margin: 4px 8px;
+    padding: 5px;
+    border: 1.4px solid #222a;
+    border-radius: 4px;
+}
+
+legend {
+    padding: 0 6px;
+}
