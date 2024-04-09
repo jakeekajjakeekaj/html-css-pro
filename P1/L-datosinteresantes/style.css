@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #000;
+    background-color: #d00;
+    position: relative;
+}
+
+/* PARA TRABAJAR CON LOS RELATIVE, LO QUE ES TOP Y LEFT TIENEN PRIORIDAD EN VEZ DEL BOTTOM Y RIGHT */
+    
+.box--relative {
+    left: 50px;
+    top: 30px;
+    background-color: #44d;
+}
+
+.box:nth-child(5) {
+    left: 50px;
+    top: -30px;
+    z-index: -1;
+    background-color: #4d4;
+}
+
+/* EL ABSOLUTE YA LO CONOCES BIEN */
+/* Con esto recuerda que se pueden hacer ventanas modales, las cuales son las que luego se colocan encima del todo como ventanas emergentes, es necesario el uso de JS y lo mejor es que busques ejemplos de estas en Internet, pero que se sepa que se pueden realizar */
+
+/* FIXED */
+/* El position:fixed es como el absolute, solo que en vez de tomar en cuenta algún relative, toma en cuenta al DOM, a la vez siempre se quedará en esa posición marcada aún cuando se baje el scroll */
+/* EJEMPLO: */
+
+.contenedor-fixed__box-fixed {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    height: 60px;
+    position: fixed;
+    right: 0;
+    background-color: #fff;
+    border: 2px solid #000;
+    box-shadow: 0px 0px 40px #000;
+}
+
+.contenedor-fixed__box-fixed h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.contenedor-fixed__box-fixed p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.fixed-content {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.contenedor-fixed-main {
+    position: relative;
+}
+
+.overlay {
+    background: linear-gradient(to-top, #000, transparent);
+    position: absolute;
+    /* z-index: 20; */
+    width: 100%;
+    bottom: 0;
+    height: 100%;
+}
+
+/* STICKY */
+/* Al colocar el positiion:sticky es como el fixed, solo que el sticky termina hasta donde nosotros le indiquemos */

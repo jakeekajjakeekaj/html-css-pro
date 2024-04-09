@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #eee;
+    font-family: sans-serif;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    margin: 50px auto 0;
+    background-color: #fff;
+    border: 1px solid #0006;
+    /* Esto básicamente indica cómo se va a comportar el espaciado, normal (por defecto) es la propiedad por defecto, nowrap no da ningún salto de linea, pre coloca el texto tal cual está escrito en el html (es decir si en el html se coloca un salto de linea, este saldo de linea se respetará), pre-wrap para este caso es como si combináramos el pre y el normal, es decir que nos respetará los saltos de línea escritos en el html, pero a su vez también realiza un salto de linea si encuentra desbordamiento */
+    white-space: normal;
+    /* FUNCIÓN INTERESANTE: Si usamos text-overflow: ellipsis; y después colocamos overflow:hidden; cuando se detecta que se va a desbordar de nuestro cuadro, por ejemplo si colocamos un white-space: nowrap, este se encarga de poner 3 puntitos indicando que falta contenido pero que no se mostrará */
+    /* FUNCIÓN INTERESANTE: word-break: break-all; indica que las palabras se recortarán tal cual, es decir que no colocará la palabra abajo, si no que pondrá letras abajo y letras arriba, digamos que recorta la palabra */
+    /* FUNCIÓN INTERESANTE: overflow-wrap: break-word esto detecta si la palabra se puede romper pero se siga viendo bien, de ser asi la rompe para colocarla abajo, al final digamos que separa a la palabra por sílabas */
+    /* FUNCIÓN INTERESANTE: text-wrap: balance; esto lo que hace es balancear el texto para que no se vea muy feo, es decir que si quedará largo de unas zonas y corto de otras al final haría que se vea feo, con esto lo que hace es balancearlo para que se vea parejo de ambos lados 'simétrico' (MUY USADA EN LOS TÍTULOS) */
+    /* FUNCIÓN INTERESANTE: text-wrap: pretty; esto lo que hace es evitar a las viudas o huérfanos, es decir evita que al principio o al final haya solo una palabra, sino que ajusta todo para que siempre hayan 2 palabras al principio o 2 palabras al final MINIMO (SE USA MAYORMENTE EN LOS TEXTOS) */
+}

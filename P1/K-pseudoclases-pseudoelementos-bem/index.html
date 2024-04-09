@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGINA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<!-- PSEUDOCLASES -->
+<!-- IS, WHERE, HAS -->
+<!-- El :is básicamente agrupa en CSS, sin embargo de momento no se realizará ya que básicamnete es como cuando agrupamos sin el is, pero se puede agrupar en caso de tener por ejemplo varias cositas dentro de algo, pues de esa manera ya no tenemos que escribir cosa1 cosita1, cosa1 cosita2, sino que se podría escribir como cosa1:is(cosita1, cosita2) -->
+<!-- Con el caso de :where es lo mismo, solo que la espeicifidad es diferente, :is tiene mayor especifidad que :where, es decir que tiene mayor propridad :is en la cascada -->
+<!-- :has modifica en caso de que se tenga, es decir cosa1:has(cosita1) quiere decir que en caso de que se cumpla se realiza una acción, al final se vería como una condición realmente -->
+
+<!-- PSEUDOELEMENTOS -->
+<!-- Los pseudoelementos llevan :: como el ::firstletter ::firstline ::selection (este es interesante porque es lo que define al momento de con el mouse seleccionar algo) ::placeholder ::marker -->
+<!-- Básicmanete cambia propiedades de elementos -->
+<!-- También existe el ::before que como dato interesante no se puede seleccionar, y el contenido se coloca antes de lo que se haya declarado, así como se declara al contenido dentro con el elemento content: "hola por ejemplo" -->
+<!-- ::after funciona igual que el ::before solo que ahora en vez de colocarse antes se coloca después -->
+
+<!-- BEM -->
+<!-- Es una metodología para tener buenas prácticas, para este caso se separa a las cosas como bloques, es decir que de esta manera, si tenemos una publicación, pues que se vea como un bloque que se puede repetir para las siguientes publicaciones, pero que a su vez si se quiera modificar algo de manera específica se pueda hacer, solo que como ya se explicó, de esta manera se puede estar repitiendo el código -->
+<!-- Elemento, básicamente hace referencia a una parte del bloque, que por si sola no hace sentido pero adentro del bloque si, por ejemplo en una navegación donde se tienen íconos, si el ícono estuviera fuera de un bloque no tiene mucho sentido, pero al estar agrupado dentro de un bloque ya causa sentido -->
+<!-- Modificadores, que indican que si se requiere algo diferente de un bloque, pues se crea una clase que sea capaz de modificar dicha sección del bloque -->
+<!-- EJEMPLO DE METODOLOGÍA BEM: -->
+<h1>INGREDIENTES</h1>
+<ul class="lista">
+    <!-- Primero se indica al padre y después se indica a lo que se creará, para este caso li sería un item por lo tanto se utiliza __ para crear esta relación así como se muestra abajo -->
+    <!-- Posterior a esto si se van a modificar algunos elementos, la manera de declarar los modificadores sería nombrando a lo que se va a modificar y después el nombre que se declarará y sobre esto la relación serán 2 guines juntos como se muestra a continuación -->
+    <li class="lista__item item--danino">SAL</li>
+    <li class="lista__item">PAPA</li>
+    <li class="lista__item item--importante">HARINA</li>
+    <li class="lista__item">AGUA</li>
+</ul>
+
+<!-- De esta manera ya podemos ver esto como bloques y si queremos por ejemplo agregar más listas, se puede agregar sin ningún problema, y si en algún punto queremos modificar alguna lista como para cambiar el fondo o la opacidad o algo por el estilo bastaría con nombras class="lista lista--modificando" por ejmplo -->
+
+</body>
+</html>

@@ -40,3 +40,19 @@ ul a {
 .prueba {
     font-size: 3rem;
 }
+
+/* De esta manera nosotros indicamos que cada 2 Numeros se estará tomando la acción, de ahí en fuera ya conocemos lo que pasa si solo escribimos el número, así mismo pudiendo usar el first o el last */
+.pseudoclass-1 li:nth-child(2n) {
+    color: #f00;
+}
+
+/* De esta manera se indica que a todos los li que no tengan a la clase excluir, se le aplicará el diseño */
+.pseudoclass-2 li:not(.excluir) {
+    color: #00f;
+}
+
+/* Si se encuentra algo vacío, se le aplicará lo siguiente */
+div:empty {
+    background-color: #0f0;
+    padding: 30px;
+}
