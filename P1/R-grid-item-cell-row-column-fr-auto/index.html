@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<!-- GRID -->
+<!-- ** ES IMPORTANTE NOTAR LA DIFERENCIA ENTRE GRID ITEM Y GRID CELL, el grid-item básicamente es el contenido, mientras que el grid-cell es toda la celda, digamos que el contenido puede estar dentro de una casilla, pero entre la casilla y el contenido puede haber un espacio, pues ya contando todo el contenido mas el espacio, sería toda la casilla, la cual sería la grid-cell -->
+<!-- Con grid, los items no tienen margin collapse, es decir que se van a sumar los margin -->
+<!-- ** AL MOMENTO DE CREAR UN GRID, lo primero que se indica es que se crearán filas y se mantendrá una sola columna, si nosotros queremos trabajar ahora con columnas también, debemos indicar el grid-template-columns: 200px; de esta manera le estamos dando el valor al grid de que todas las celdas tendrán esta anchura, pero si queremos sumar la cantidad de columnas, bastaría con hacer algo estilo grid-template-columns: 200px 200px 200px y de esta manera hemos dividido en 3 columnas donde todas miden 200px de anchura ** -->
+<!-- Así como con flex, podemos definir la dirección como direction: rtl; para ir de derecha a izquierda por ejemplo -->
+<!-- ** A PESAR DE QUE POR PREDETERMINADO PRIMRO SE CREAN LOS GRID EN FORMA DE FILAS, ASÍ COMO CON grid-template-columns TAMBIÉN PODEMOS DEFINIR EL TAMAÑO DE LAS FILAS, por ejemplo:
+grid-template-rows: 500px 200px lo que indicarían tamaños de 500px y 200px en las filas -->
+<!-- AL FINAL SE PODRÍA DECIR QUE EL grid-template-columns DEFINE EL WIDTH, mientras que el grid-template-rows DEFINE EL HEIGHT -->
+
+<!-- UNIDADES FR Y AUTO -->
+<!-- Si nosotros tenemos un 
+    grid-template-columns: auto 200px
+y después tenemos en nuestro item
+    width: 200px
+Aquí tendriamos lo que se explicó anteriormente, nuestro grid-item tendría un tamaño de 200px, mientras que la cell tendría un tamaño auto -->
+<!-- ** Recordemos que el auto, verifica el tamaño vacío y lo reparte entre los auto -->
+<!-- PARA EL CASO DE fr, lo que hace es utilizar todo el espacio disponible, sin embargo al fr no le importa el contenido, decir que por ejemplo con auto si hay mucho contenido e una caja pero poco en otra, pues lo divide de tal manera que el que tenga mayor contenido será más grande, con fr no, con fr le toca a todos por igual aunque si no hay contenido en otras cajas, lo reduce -->
+<!-- Si le damos 2fr 1fr se le dará prioridad de tamaño al que tiene 2fr por ejemplo -->
+
+</body>
+</html>

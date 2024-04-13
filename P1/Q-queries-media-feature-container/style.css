@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eee;
+    font-family: sans-serif;
+}
+
+/* De esta manera cuando se coloque la tecla ctrl + p, estariamos indicando que se realizará una impresión y el media print solo estará afectando al área de impresión */
+@media print {
+    body {
+        font-size: 60pt;
+    }
+}
+
+/* El de abajo ya lo conoces, es el que se aplica a las pantallas */
+/* Para este caso mientras que mida menos de 500px tendrá un font-size: 30px; de lo contrario pasará al predeterminado */
+@media screen and (max-width: 500px) {
+    body {
+        font-size: 30px;
+    }
+}
+
+/* FEATURE QUERIES */
+/* En pocas palabras is el navegador lo soporta, usará esto, de lo contrario no lo usará */
+@supports (color: oklch(30% 0.2 30)){
+    body {
+        color: oklch(80% 0.2 30);
+    }
+}
+/* En caso de que no se sporte lo de arriba, este será el estilo; para este caso es algo muy simple, pero aquí podemos colocar cosas como por ejemplo en los casos de usar flex o grid por ejemplo o algo por el estilo en donde ya nos metemos más de lleno con el diseño de alguna web */
+@supports not (color: #a00) {
+    body {
+        color: #a00;
+    }
+}
+
+/* CONTAINER QUERIES */
+.container {
+    /* Se tiene que declarar un nombre de contenedor para que el @container no se lo aplique a todos los contenedores */
+    container-name: main;
+    /* Lo de abajo define el tipo, ed decir inline-size indica que las condiciones se realizarán de acuerdo al ancho (en linea), size; revisa las dimensiones en bloque y en linea, normal; viene por defecto y solo indica que no se puede hacer container query */
+    container-type: inline-size;
+    /* Dicho lo anterior y con el @container ya declarado, al tener en nuestro container la dimensión de abajo nuestro @container entra en acción, si se tuviera una width mayor a 500px el @container no realizaría ninguna acción */
+    width: 300px;
+}
+
+.container-2 {
+    container-type: inline-size;
+    width: 300px;
+}
+
+/* Si no se declara el nombre, la propiedad se aplicaría al todos los contenedores, de esta manera nos aseguramos de que solo se aplique a uno */
+@container main (max-width: 500px) {
+    p {
+        color: #0c0;
+        font-size: 25px;
+    }
+}
+
+/* EN POCAS PALABRAS CON ESTO PODEMOS SELECCIONAR ÚNICAMENTE CIERTO CONTENEDOR PARA QUE SE MODIFIQUE DEPENDIENDO DE SUS PROPIEDADES */

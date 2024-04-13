@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- RECORDEMOS QUE EL outline NO OCUPA ESPACIO, ES DECIR QUE ES COMO SI ESTUVIERA ENTRE LO QUE ES border Y margin, PERO A SU VEZ COMO SI FUERA EN OTRA CAPA YA QUE NO MODIFICA EL TAMAÑO DE LA CAJA NI NADA -->
+    <!-- USAR outline ES MUY BUENO PARA LAS TRANSICIONES, ESTO DEBIDO A QUE AL USAR POR EJEMPLO :hover LOS TAMAÑOS NO SE MODIFICAN DE LA CAJA, SIMPLEMENTE APARECE UN BORDE QUE NO MODIFICA NINGÚN TAMAÑO PERO HACE QUE SE VEA RESALTADO POR EJEMPLO -->
+    <!-- ** NOTA ** -->
+    <!-- SI NOSOTROS QUEREMOS QUITAR EL outline DE NUESTRO INPUT POR EJEMPLO, UNO PUEDE PENSAR QUE TENEMOS QUE ENTRAR A SU :focus Y DESDE AHÍ DECLARAR outline: none; SIN EMBARGO ESO ESTÁ MAL, YA QUE AL HACER ESO PODEMOS TENER PROBLEMAS DE ACCESIBILIDAD, LA MANERA CORRECTA DE ACTUAR EN ESTOS CASOS SERÍA ENTRAR AL input:focus-visible Y DENTRO AHORA SÍ DECLARAR outline: none; DE ESTA MANERA INDICAMOS QUE EL outline ESTÁ PRESENTE PERO NO SERÁ VISIBLE PARA EL USUARIO -->
+    <!-- outline: offset; INDICA UNA SEPARACIÓN ENTRE EL border -->
+
+    <!-- FLEXBOX -->
+    <!-- ** DATO INTERESANTE ** Si declaras una width en flex, cuando tu agrandas o achicas la ventana, realmente estos se van a poder achicar PERO NO AGRANDAR, es decir que is declaramos una width, esta width siempre se va a mentener como un máximo -->
+    <!-- flex-direction: ; Esto indica la dirección de las cajas -->
+    <!-- firection: ltr; Esto indica que la dirección será de izquierda a derecha, lo que en si se aplica a lo que sería el contenido de la propia caja -->
+    <!-- flex-wrap: wrap; Indica que cuando se llegue a un tamaño en la ventana, los items de adentro se puedan comenzar a apilar en vez de comenzar a achicarse -->
+    <!-- flex-flow: row wrap; Permite definir a flex-direction y flex-wrap, es decir sería short hand -->
+    
+    <!-- ALINEACIÓN -->
+    <!-- justify-content: center; Recordemos que esto sirve para centrar el contenido en el eje x, podemos utilizar también start (para colocar al inicio), end (Para colocar al final), space-between (Para colocar el primer elemento al inicio del eje, al último elemento al final del eje y los demás elementos distribuirán su espacio para que todos queden a la misma distancia distribuida en el espacio sobrante), space-around (Cada elemento tendrá una separación igual a la izquierda y derecha, incluyendo a los del inicio y final, provocando a su vez que los márgenes no colapsen, sino que se pongan uno detrás de otro), space-evenly (Como el space around solo que con el espacio de los márgenes colapsando, es decir que ahora sí hay un espacio equitativo entre todos los elementos) -->
+    <!-- SI QUEREMOS APLICAR LO DE ARRIBA PERO EN EL EJE Y, BASTA CON QUE COLOQUEMOS LA DIRECCIÓN DEL FLEX A COLUMN -->
+    <!-- align-items: center; De esta manera también podemos centrar las cosas en el eje y, igual se puede usar stretch; para indicar que los items se estiren y rellenen el espacio, start; pocisiona al inicio, end; pocisiona al final, baseline; Se alinenan según la linea del texto -->
+    <!-- POR DEFECTO ESTÁ PUESTO EL stretch; ES POR ESTO QUE SI SOLO QUEREMOS MODIFICAR A UN ITEM, DEBERÍAMOS DECLARAR ALGUNA DE LAS PROPIEDADES YA MENCIONADAS, COMO start o center -->
+    <!-- align-content: start; Este vendría actuando como el justify, solo que para el eje y, para este caso por ejemplo si aplicamos solo align-items: start; nos colocaría los items al inicio pero son una separación; con align-content: start; esto ya no es así y ahora sí literalmente coloca todo al inicio -->
+    <!-- ES DECIR QUE PARA UNA LINEA ESTÁ BIEN USAR align-items, PERO CUANDO YA SE PRESENTAN MÚLTIPLES LINEAS LO IDEAL ES USAR align-content -->
+
+    <!-- ORDENAMIENTO -->
+    <!-- Todos los elementos vienen por defecto con order: 0; Es por esto que si le colocamos a algún elemento un order: 1; automáticamente este tendrá mayor valor en comparación a los demás elementos y se colocará al final; tomando en cuenta esto, es necesario definir bien el orden que llevarán los elementos para así evitar problemas -->
+
+    <!-- ACHICAMIENTO / AGRANDAMIENTO -->
+    <!-- flex-grow: 1; Por defecto el flex-grow es igual a 0, si nosotros colocamos un 1, le estamos indicando que todo el espacio disponible lo va a utilizar, de esta manera se agranda y se achica el contenido, si al primer hijo le colocamos un valor de 2 mientras que a los demás el valor de 1, lo que estamos indicando es que va a utilizar el doble de espacio en comparación de los otros 2 -->
+    <!-- flex-shrink: 1; Esto define hasta donde los elementos se podrán achicar, por defecto el valor es de 0, si nosotros tenemos en nuestro flex-flow: row wrap; por ejemplo, indicamos que si se llega a un límite del tamaño, el item se pasará hacia abajo gracias al wrap, pero al usar shrink lo que estamos indicando es hasta dónde se podrá achicar antes de pasarse abajo, al colocar 1, funciona como flex-grow, que los elementos se achicarán a la par, o uno más que otro dependiendo el valor de los demás items -->
+    <!-- flex-basis: 50px; De esta manera se declara el tamaño que tendrán nuestros items, es decir que nisiquiera es necesario tener un width para nuestros items del flex, este funciona parecido a lo que sería el min-width, en donde indicamos la medida mínima pero que si se puede estirar si es más grande el DOM -->
+    <!-- LA GRAN DIFERENCIA ENTRE DECLARAR UN flex-basis vs un min-width, es que el min-width solo verifica lo que hay en el width, mientras que el basis verifica lo que hay en la dirección apuntada, es decir que si la dirección del flex es en dirección de column, el que afectaría sería el basis ya que ahora lo haría respecto al height en vez de la width -->
+    <!-- SHORTHAND: -->
+    <!-- flex: 1 1 200px; Este short hand indicaría flex-grow, flex-shrink, flex-basis, de esta manera estamos indicando que queremos que los elementos crezcan y se achiquen a la par, pero que se tenga un tamaño mínimo de 200px -->
+
+    <!-- ALINEACIÓN DE UN HIJO EN ESPECÍFICO -->
+    <!-- align-self: start; Para que este funcione, para empexar en todos los demás elementos, es decir en la clase padre tiene que estar declarado un align-items, después de esto el align-self tiene que estar declarado si o si en algún hijo, y de esta manera podemos modificar el align específico de algún hijo -->
+
+</body>
+</html>

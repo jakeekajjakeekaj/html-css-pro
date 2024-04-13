@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- BLOQUE Y MULTIMEDIA FLEXIBLE -->
+<!-- Usando min-width y max-width podemos determinar las medidas minimas y máximas que tendrá nuestra ventana -->
+
+<!-- Para colocar una imagen, si nosotros colocamos max-width en vez de definirle una width desde el inicio, lo que estamos indicando es que si declaramos un width: 100%; nuestra imagen puede estar perdiendo calidad, ya que al estirarse más allá de lo que su resolución le permite, se estará deformando; mientras que si colocamos el max-width 100%; le estamos indicando que será el 100% de su tamaño real y por más que se agrande la ventana, esta no se deformará después de llegar al tamaño máximo soportado por la imagen, así mismo sería importante colocarle un height: auto; -->
+
+<!-- Para el caso de LOS VIDEOS ES DIFERENTE, si queremos adaptar lo que es un video, antes se hacía uso de múltiples elementos para conseguirlo, ahora basta con declarar en el contenedor del video un aspect-ratio: 16/9; que como dato interesante en otros casos luego la gente trabaja en porcentaje con el padding, y esto es porque 9 / 16 = 0.5625 y luego esto multiplicarlo * 100 = 56.25 y este es el porcentaje que la gente usa, pero de esta manera con aspect ratio nos ahorramos eso -->
+<!-- Posterior a esto ahora si le podemos dar un max-width: 100%; al video ó width: 100%; y con eso ya se pudo tener un video adaptativo -->
+
+<!-- ATRIBUTOS SRCSET Y SIZES -->
+<!-- Estos son atributos HTML que trabajan en conjunto para cargar imagenes flexibles, básicamente provocan que se le diga al navegador cuál será la mejor opción dependiendo de ciertas condiciones, es decir si la página tiene cierto zoom o si la ventana tiene cierta cantidad de pixeles para así por ejemplo usar una imagen más pequeña o más grande -->
+<!-- El primer caso sería tener la misma imagen en diferentes dimensiones -->
+<!-- Dentro de nuestra etiqueta img se debe colocar al atributo -->
+<!-- <img src="img-small.png" srcset="img-small.png 400w, img-medium.png 600w, img-big.png 1000w"> La explicación a esto es que con srcset le estamos diciendo al navegador que recomendamos colocar cierta dirección de imagen si se tiene cierta cantidad de pixeles en el width, es decir para el primer ejemplo le estamos diciendo que coloque una img-small.png cuando se encuentre con 400w que el w sería lo que son los pixeles, después colocamos una coma y seguimos declarando a las demás opciones así como se muestra -->
+
+<!-- Ahora existe otra opción, esta sería sizes, y básicamente solo funciona cuando hay presente un srcset y le indica al navegador cuáles serían los máximos de altura con los que puede trabajar; ejemplo: -->
+<!-- <img src="img-small.png" srcset="img-small.png 400w, img-medium.png 600w, img-big.png 1000w" sizes="(max-width: 400px) 300px, (max-width: 600px) 500px, 900px"> como se puede observar, sizes se declara después del srcset y básicamente lo que indica es que cuando se tenga menos de 400px se cargará la imagen de 300px, cuando se tenga menos a 600px se cargará la imagen de 500px y para el resto se cargará la imágen de 900px -->
+<!-- De esta manera definimos las imagenes alternativas con sus tamaños gracias al srcset y con sizes definimos qué tipo de tamaño le recomendamos que cargue al navegador según la resolución de la pantalla -->
+    
+</body>
+</html>

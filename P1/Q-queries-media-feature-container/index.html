@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<!-- MEDIA QUERIES -->
+<!-- La sintaxis básica es 
+    @media not|only mediatype and (expressions) {
+    CSS-Code
+} 
+En donde primero se inicia la media query, not|only son operadores opcionales, donde not excluye a los dispositivos que cumplan con la consulta mientras que only se encarga de que los dispositivos antiguos que no soportan media querys apliquen los estilos definidos en la consulta, despues definimos print para imprimir algo o screen para medir la pantalla y después es opcional pero es para definir diferentes expresiones -->
+<!-- EJEMPLO CON PRINT -->
+<div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima facilis rerum voluptates nisi tempora sint soluta omnis deserunt quisquam earum nihil blanditiis exercitationem reiciendis velit molestiae, quia illum fugit magnam!
+</div>
+
+<!-- FEATURE QUERIES -->
+<!-- Son conocidos como media queries css4, son una herramienta que le permite a los desarrolladores escribir código en caso de que el navegador soporte una funcionalidad, también podemos definir el comportamiento en caso de que no se soporte cierta funcionalidad, ejemplo mostrado en style.css -->
+
+<!-- CONTAINER QUERIES -->
+<!-- Los container queries son queries de contenedor, esto indica que con los media queries por ejemplo, todo era en función a la pantalla, dependiendo de la medida de la pantalla dábamos diferentes propiedades, sin embargo ahora con los container queries dependiendo de las medidas de cierto contenedor, podemos darle diferentes propiedades al contenedor, EJEMPLO: -->
+<div class="container">
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, ipsa eligendi? Voluptates hic officia commodi aspernatur in qui fuga corrupti voluptatum quis. Est modi, repellendus optio sapiente id amet sunt!</p>
+</div>
+<div class="container-2">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores veniam dolorem, eius doloremque libero dicta debitis aspernatur aperiam deserunt fugit assumenda soluta, illo harum iure nisi aut pariatur alias in?</p>
+</div>
+
+</body>
+</html>

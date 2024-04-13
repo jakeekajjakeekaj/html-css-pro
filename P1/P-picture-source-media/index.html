@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- PICTURE, SOURCE, MEDIA -->
+    <!-- picture, nosotros al usar esta etiqueta le estamos indicando al navegador que le pondremos varias opciones y le determinaremos cuál tomar -->
+    <!-- ** BÁSICAMENTE SE PUEDE HACER LO MISMO QUE LO QUE SE HIZO EN LA SECCIÓN PASADA, SOLO QUE CON UNA MEJOR SEMÁNTICA Y RECOMENDAD ** Ejemplo: -->
+    <!-- <picture>
+        <source media="(max-width: 400px)" srcset="img-small.png">
+        <source media="(max-width: 600px)" srcset="img-medium.png">
+        <img src="img-big.png" alt="Imagen-fondo">
+    </picture> 
+    De esta manera se está indicando que primero se declara la etiqueta picture, dentro de esta habrá un source y dentro como propiedad se declarará la media, el cual indica el max-width al que se llegará y despues se declara el srcset y se coloca la dirección, de esta manera se indica que si se tiene una dimensión menor a 400px se coloca la img-small, de lo contrario si se tiene una dimensión menor a 600px se coloca la img-medium, y de lo contrario se colocará la img-big para todos los demás -->
+
+    <!-- TAMBIÉN SE PUEDE TRABAJAR CON WEBP, WEBP ES UNA APUESTA POR CHROME PARA INDICAR QUE MEJOR SE USEN IMAGENES CON ESTE TIPO DE FORMATO YA QUE SON MÁS ESTABLES Y CARGAN MEJOR Ejemplo: -->
+    <!-- <picture>
+        <source srcset="img.webp" type="image/webp">
+        <source media="(max-width: 400px)" srcset="img-small.png">
+        <source media="(max-width: 600px)" srcset="img-medium.png">
+        <img src="img-big.png" alt="Imagen-fondo">
+    </picture>  -->
+    <!-- De esta manera estamos indicando que si soporta webp, use la webp, de lo contrario use las siguientes opciones declaradas -->
+    <!-- ** LA RECOMENDACIÓN ES QUE ESTO NO SE USE PARA RESOLUCIONES PEQUEÑAS, EJEMPLO PARA LOGOS O ESE TIPO DE COSAS, LO MEJOR ES QUE SE USE PARA RESOLUCIONES QUE JUSTAMENTE ESTARÁN VARIANDO VARIANDO BASTANTE DEPENDIENDO DEL DISPOSITIVO -->
+    
+</body>
+</html>
