@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- GRID -->
+    <!-- Seguimos con grid, esta vez con REPEAT y MINMAX -->
+    <!-- Para el caso del repeat simplemente nos ayuda a escribir menos texto, es decir que is nosotros escribimos:
+    grid-template-columns: repeat(4, 1fr) -->
+    <!-- Nos estamos ahorrando el tener que escribir 4 veces 1fr, Si queremos después indicar otra cantidad, si se puede, solo es cos de escribir
+    grid-template-columns: repeat(4, 1fr) 200px; -->
+    <!-- De esta manera estamos sacando 4 columnas de 1fr y la última sería e 200px -->
+    <!-- De igual manera se puede declarar el minmax para definir el mínimo y el máximo que puede tener una caja, pero esto también puede estar con el repeat:
+    grid-template-columns: repeat(4, minmax(100px, 300px)) -->
+    <!-- Y de esta manra se está indicando que se tendrán 4 columnas con un mínimo de 100px y un máximo de 300px -->
+
+    <!-- GRID IMPLICITO Y EXPLICITO -->
+    <!-- Con grid como ya se vió, se declaran los valores desde un inicio, pero qué pasa cuando se crean cajas de más y nosotros no hemos declarado los valores de estas cajas?, pues para esto existe: -->
+    <!-- grid-auto-rows: 50px; -->
+    <!-- De esta manera se indica que de manera automática, al crearse una nueva fila, esta tendrá una altura de 50px; también se puede hacer para las columnas, pero generalmente no suele ser así, generalmente los tamaños de las columnas si se quedan constantes porque así fue como se creó la plantilla para el caso de los primeros, y ya nadamás se suelen agregar filas -->
+    <!-- De igual manera nosotros podemos cambiar la dirección en que se irán agregando los nuevos elementos, esto sería con: -->
+    <!-- grid-auto-flow: column; -->
+    <!-- De esta manera ya las nuevas cajas se irán agregando en forma de columna -->
+
+    <!-- GRID GAP -->
+    <!-- Si nosotros usamos un margin dentro de las cajas de grid, se tendrá el porblema de que no colapsan entre ellas, es decir que se suman, es por esto que se usa gap, ya sea el row-gap: 20px o column-gap: 20px, o como un shorthand solo escribimos gap: 20px -->
+
+    <!-- GRID DINÁMICO Y RESPONSIVE -->
+    <!-- Nosotros tenemos auto-fit, es decir que ajusta; mientras que auto-fill rellena, es decir -->
+    <!-- grid-template-columns: repeat(auto-fit, 100px); -->
+    <!-- Si nosotros tenemos esto, lo que se indica es que al irse estirando o achicando, las cajas se irán acomodando de manera "responsive", hasta el momento si usamos fit o fill no haría ninguna diferencia -->
+    <!-- La principal diferencia entre estos 2, es cuando se trabaja con fr, es decir si nosotros tenemos -->
+    <!-- grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) -->
+    <!-- Lo que estaría haciendo el auto-fit es que al tener pocos elementos, estía estirando las cajas en caso de que ya no se encuentre más contenido, mientras que auto-fill estaría agregando "cajas invicibles" una vez que se llegue a los 150px, es decir que mientras que auto-fit estira las cajas sin importar el tamaño al que lleguen, con auto-fill no pasa eso, respeta los tamaños definidos y es como si continuara agregando contenido, como si fuera apartando los elementos en donde debería de ir la caja -->
+    <!-- También se puede trabajar con ambos haciendo uso de los media querys -->
+
+    <!-- ACOMODAR ELEMENTOS -->
+    <!-- Para acomodar a los elementos dentro de un layout de grid, lo único que se tendría que hacer sería agarrar al hijo que se desea modificar nth-child y posterior a esto indicamos lo que queremos, por ejemplo: -->
+    <!-- .grid-item:frist-child {
+        grid-columns-start: 1;
+        grid-row-start: 1;
+        grid-column-end: 3;
+        grid-row-end: 3;
+    } -->
+    <!-- De esta manera estamos indicando que el primer hijo iniciará en la linea 1 tanto de fila como de columna, y terminará en la linea 3 tanto de fila como de columna, RECORDEMOS QUE SE CUENTAN LAS LINEAS, ES DECIR PARA ESTE CASO ES COMO SI ESTUVIRA USANDO 4 CAJAS DE NUESTRO grid-layout, PORQUE LA LINEA 1 SERÍA JUSTAMENTE EL INICIO DE LA CAJA -->
+    <!-- ES IMPORTANTE NO COLOCAR IMAGENES DIRECTAMENTE, ES DECIR QUE LO MEJOR ES COLOCAR div Y DENTRO DEL MISMO AHORA SI INSERTAR LA IMAGEN -->
+    <!-- Así mismo si no se quiere trabajar con las lineas, también podemos trabajar con span para hablar directamente de las columnas o filas, es decir que para el ejemplo de arriba bastaría con span para únicamente indicar fila o columna -->
+    <!-- OTRA MANERA Y MUY RECOMENDABLE, SERÍA ESCRIBIENDO: -->
+    <!-- grid-column: 1 / span 2; -->
+    <!-- De esta manera lo que se indica es que la columna iniciaría en la linea 1 por ejemplo, pero terminaría hasta la columna 2 -->
+
+    <!-- AUTO-FLOW: DENSE -->
+    <!-- Si se llega a romper nuestro layout de grid, es decir que si llega a pasar que al irse achicando o aumentando el tamaño, se llegarán a puntos en donde ya se verán como cajas vacías, eso puede hacer que se vea mal, y daría un efecto como que todo se rompió, de esta manera si nosotros usamos: -->
+    <!-- grid-auto-flow: dense; -->
+    <!-- Todo el contenido vacío se acabaría rellenando, el único tema es que comienza a revolver a los elementos, es decir que con tal de que no queden lugares vacíos, agarra otras cajas más adelante o atrás para acomodarlas en los lugares vacíos y de esta manera hacer que ya no se vea roto nuestro layout -->
+
+    <!-- GRID AREAS -->
+    <!-- Esro ya lo viste, solo recuerda que la sintaxis sería:
+    grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer" -->
+    <!-- Posterior a esto nos dirigimos al header y escribimos grid-area: header; -->
+    <!-- Ahora si que sería como etiquetar a cada cosa -->
+
+</body>
+</html>

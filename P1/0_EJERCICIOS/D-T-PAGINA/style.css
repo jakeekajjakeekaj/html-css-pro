@@ -1,0 +1,250 @@
+:root {
+    --back-color: #cfefff;
+    --back-color-alpha: #cfefffbf;
+    --back-pred-color: #fcfcfc;
+    --principal-color: #48e;
+    --font-pred-color: #303030;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--back-color);
+    color: var(--font-pred-color);
+}
+
+.no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Versión sin prefijo, actualmente compatible con Chrome y Opera */
+}
+
+/* -------------- HEADER SECTION ------------ */
+
+.header {
+    background-color: var(--back-pred-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    /* Lo de abajo es para poder trabajar con los container queries */
+    /* Define el tipo de display que tendrá el container */
+    container-type: inline-size;
+    /* Define la etiqueta para el container */
+    container-name: header;
+}
+
+/* .header input[type="checkbox"] { Esta sería una manera de llamarlo en caso de no tener clase propia*/
+/* } */
+
+.header__checkbox {
+    display: none;
+}
+
+/* De esta manera indicamos que que si nuestro header__checkbox está clickeado, se realizará un cambio dentro de .header__nav */
+.header__checkbox:checked ~ .header__nav {
+    display: flex;
+}
+
+.header__open-nav-button {
+    font-size: 3rem;
+    color: var(--principal-color);
+    font-weight: 600;
+    position: absolute;
+    right: 10px;
+}
+
+.header__open-nav-button:hover {
+    cursor: pointer;
+}
+
+.header__logo {
+    max-width: 100%;
+    width: 80px;
+}
+
+.content {
+    position: relative;
+}
+
+.header__nav {
+    display: none;
+    background-color: var(--back-color-alpha);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    height: 50vh;
+    width: 100vw;
+    top: 100%;
+    z-index: -1;
+    align-content: center;
+}
+
+.header__nav-list {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 100%;
+    margin: auto;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.header__nav-item {
+    list-style: none;
+    padding: 20px;
+}
+
+.header__nav-item a {
+    color: var(--font-pred-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.header__nav-list :is(:hover, :active) {
+    text-decoration: underline;
+    background-color: var(--back-color);
+}
+
+/* ------------- HEADER QUERIES -------------- */
+
+@container header (min-width: 600px) {
+
+    .header__open-nav-button {
+        display: none;
+    }
+
+    .header__nav {
+        display: flex;
+        /* Propiedad por defecto */
+        position: static;
+        width: auto;
+        height: 100%;
+        background-color: var(--back-pred-color);
+        justify-content: space-between;
+    }
+
+    .header__nav-list {
+        flex-direction: row;
+        /* gap: 20px; */
+    }
+
+    .header__nav-item {
+        border-radius: 4px;
+    }
+
+    .header__nav-item a {
+        font-size: 1.1rem;
+    }
+
+    .header__logo {
+        width: 64px;
+    }
+
+}
+
+/* ------------- HEADER ENDS ------------- */
+
+/* ------------ PROFILE SECTION ------------- */
+
+.profile {
+    background-color: var(--back-pred-color);
+    container-name: profile;
+    container-type: inline-size;
+}
+
+.profile__wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--back-pred-color);
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.profile__img-container {
+    /* height: 200px; */
+    /* height: 300px; */
+    /* overflow: hidden; */
+    /* De esta manera se "ocultará" la imagen, es dcir que mientras se vaya agrandando, la imagen se irá modificando */
+    text-align: center;
+    align-content: center;
+}
+
+.profile__img {
+    max-width: 100%;
+    min-width: 300px;
+    width: 550px;
+    /* height: auto; */
+    border-radius: 7px;
+    /* margin: auto; */
+}
+
+.profile__data-container {
+    max-width: 600px;
+}
+
+h1 {
+    color: var(--principal-color);
+    margin: 1rem 0;
+}
+
+.profile__skills-container h2 {
+    color: var(--principal-color);
+    margin: 2rem 0 1rem 0;
+}
+
+.profile__skill {
+    list-style: none;
+    display: flex;
+    margin: 10px;
+    max-width: 600px;
+    align-items: center;
+}
+
+.profile__load-bar {
+    border: 2px solid var(--principal-color);
+    border-radius: 8px;
+    color: var(--back-pred-color);
+    padding: 2px;
+    font-size: 12px;
+    width: 80%;
+    margin: 4px;
+}
+
+.profile__load-bar_bar {
+    background-color: var(--principal-color);
+    border-radius: 4px;
+    padding: 4px 6px;
+}
+
+.bar--80 {
+    width: 80%;
+}
+
+.bar--20 {
+    width: 20%;
+}
+
+.bar--70 {
+    width: 70%;
+}
+
+/* ------------ PROFILE QUERIES ------------------ */
+
+@container profile (min-width: 800px) {
+    .profile__wrapper {
+        flex-direction: row;
+    }
+}
+
+/* ------------ PROFILE SECTION ENDS ------------- */

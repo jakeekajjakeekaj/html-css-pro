@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- justify-items: center; Aparte de center, existe stretch (Predeterminado), start (Se achica y se van al inicio respecto a la horizontal), self-start (Es lo mismo que el start, solo que tiene en cuenta la dirección del hijo, si no se declarar como self-start no se tendrían en cuenta los parámetros de dirección de los hijos), self-end (Lo mismo que self-start pero para el final) y end (Lo mismo que start pero al final), aparte tenemos baseline y first-baseline (Lo coloca sobre la linea de texto), last-baseline -->
+    <!-- LA PRINCIPAL DIFERENCIA ENTRE justify-items Y justify-content, ES QUE EL justify-items MUEVE LOS ELEMENTOS DENTRO DE LO QUE ES LA CELDA, MIENTRAS QUE EL justify-content MUEVE TODA LA CELDA EN SI -->
+    <!-- PARA ALINEAR EN EL EJE VERTICAL, ES EL MISMO FUNCIONAMIENTO, SOLO QUE AHORA ESCRIBIENDO align-items, ASÍ MISMO COMO SE MENCIONÓ HACE UN MOMENTO, items es para le contenido dentro de la cuadrículo, mientras que el content es para la tabla en sí -->
+
+    <!-- SUBGRID -->
+    <!-- Esta es una manera de hacer que los hijos del grid, también formen parte de lo que es el GRID, BÁSICAMENTE A LOS HIJOS DENTRO DE LO QUE ES EL grid-template-columns o el grid-template-rows, en vez de indicar nosotros mismos las cantidades ya sea en la linea o con toda la fila y columna usando el span; basta con indicar subgrid como valor, es decir:
+        grid-template-columns: subgrid;
+    De esra manera estamos indicando que la grilla secundaria es perteneciente a la grilla principal y usará el mismo formato, de esta manera si nosotros alteramos muchos datos en la grilla secundaria, esta se verá limitada por lo que se haya indicado en la principal y así no se romperá -->
+    
+</body>
+</html>
