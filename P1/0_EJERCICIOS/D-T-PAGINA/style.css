@@ -2,6 +2,7 @@
     --back-color: #cfefff;
     --back-color-alpha: #cfefffbf;
     --back-pred-color: #fcfcfc;
+    --back-form-color: #9fbfee;
     --principal-color: #48e;
     --font-pred-color: #303030;
 }
@@ -10,6 +11,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /* Esto hace que cuando se navega a través de la página el desplazamiento es más lento */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -40,6 +43,7 @@ body {
     container-type: inline-size;
     /* Define la etiqueta para el container */
     container-name: header;
+    z-index: 4;
 }
 
 /* .header input[type="checkbox"] { Esta sería una manera de llamarlo en caso de no tener clase propia*/
@@ -83,7 +87,7 @@ body {
     height: 50vh;
     width: 100vw;
     top: 100%;
-    z-index: -1;
+    z-index: 2;
     align-content: center;
 }
 
@@ -130,6 +134,7 @@ body {
         width: auto;
         height: 100%;
         background-color: var(--back-pred-color);
+        /* background-color: #000; */
         justify-content: space-between;
     }
 
@@ -157,12 +162,12 @@ body {
 /* ------------ PROFILE SECTION ------------- */
 
 .profile {
-    background-color: var(--back-pred-color);
     container-name: profile;
     container-type: inline-size;
 }
 
 .profile__wrapper {
+    background-color: var(--back-pred-color);
     display: flex;
     flex-direction: column;
     background-color: var(--back-pred-color);
@@ -196,6 +201,7 @@ body {
 h1 {
     color: var(--principal-color);
     margin: 1rem 0;
+    /* font-size: 3rem; */
 }
 
 .profile__skills-container h2 {
@@ -241,10 +247,253 @@ h1 {
 
 /* ------------ PROFILE QUERIES ------------------ */
 
-@container profile (min-width: 800px) {
+@container profile (min-width: 600px) {
     .profile__wrapper {
-        flex-direction: row;
+        border-top: 1px solid #dddb;
     }
 }
 
+@container profile (min-width: 800px) {
+
+    .profile__wrapper {
+        flex-direction: row;
+        /* background-color: transparent; */
+    }
+
+    .profile__data-container {
+        margin-left: 20px;
+    }
+
+    .profile__data {
+        max-width: 620px;
+    }
+
+    .profile__description h1 {
+        font-size: 3rem;
+    }
+
+    .profile__skills-container h2 {
+        font-size: 1.9rem;
+    }
+
+}
+
 /* ------------ PROFILE SECTION ENDS ------------- */
+
+
+/* ------------- PORTAFOLIO SECTION ----------- */
+
+.portafolio {
+    /* background-color: var(--back-color); */
+    display: grid;
+    /* flex-direction: column; */
+    text-align: center;
+    min-height: 100vh;
+    padding: 0 10px;
+    container: portafolio / inline-size;
+}
+
+.portafolio__title {
+    font-size: 2.5rem;
+    padding: 15px;
+    margin: auto;
+}
+
+.portafolio__project h2 {
+    font-size: 1.9rem;
+    padding: 20px;
+}
+
+.portafolio__project-container {
+    display: grid;
+    /* grid-template-columns: 1fr; */
+    /* max-width: 1300px; */
+    gap: 20px;
+    width: 100%;
+    min-height: 90vh;
+    margin-bottom: 20px;
+}
+
+.portafolio__project {
+    display: flex;
+    color: var(--back-pred-color);
+    background-image: linear-gradient(#0009, #0009), url("https://i.pinimg.com/736x/56/bf/42/56bf423245c16f222db2dd9801724050.jpg");
+    background-position: 0 18%;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+.portafolio__project:hover {
+    opacity: 0.80;
+    outline: 2px solid #2226;
+}
+
+/* -------------- PORTAFOLIO QUERIES ------------ */
+
+@container portafolio (min-width: 880px) {
+    
+    .portafolio__project-container {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+
+    .portafolio__project:first-child {
+        grid-column: span 2;
+    }
+
+    .portafolio__project:last-child {
+        grid-column: span 2;
+    }
+}
+
+@container portafolio (min-width: 1090px) {
+
+    .portafolio__project:first-child {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .portafolio__project:last-child {
+        grid-column: 2 / 4;
+        grid-row: 3 / 5;
+    }
+}
+
+@container portafolio (min-width: 1460px) {
+
+    .portafolio__project:first-child {
+        grid-column: 1 / 3;
+        grid-row: 1 / 4;
+    }
+
+    .portafolio__project:last-child {
+        grid-column: 3 / 5;
+        grid-row: span 1;
+    }
+
+}
+
+/* -------------- PORTAFOLIO ENDS ---------------- */
+
+/* ------------- CONTACT SECTION ------------- */
+
+.form {
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--back-form-color);
+    /* text-align: center; */
+    container: form / inline-size;
+}
+
+.form__title {
+    margin: 15px 0 60px;
+    padding: 25px;
+    font-size: 1.9rem;
+    /* width: 100vw; */
+    text-align: center;
+    border-bottom: 1px solid #dddb;
+}
+
+.form__form {
+    display: grid;
+    /* flex-direction: column;
+    justify-content: center; */
+    /* padding: 0 12px 12px; */
+    padding: 0 15px 25px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    width: 100%;
+    background-color: var(--back-color);
+    border-radius: 12px;
+    box-shadow: 0 0 40px #0006;
+    /* margin-bottom: 30px; */
+}
+
+.form__input-container :is(input, textarea) {
+    width: 100%;
+    padding: 9px 6px;
+    font-size: 1rem;
+    margin: 4px;
+    border: none;
+    box-shadow: 2px 2px 4px #0003;
+    border-radius: 7px;
+}
+
+.form__input-container {
+    margin-top: 13px;
+}
+
+.form__input-container textarea {
+    resize: none;
+    min-height: 120px;
+    /* El inherit es para que se herede la tipografía que hemos venido utilizando */
+    font-family: inherit;
+}
+
+.button {
+    margin-top: 5px;
+}
+
+.form__input-container input[type="submit"] {
+    padding: 12px;
+    background-color: var(--principal-color);
+    color: var(--back-pred-color);
+}
+
+.form__input-container input[type="submit"] {
+    cursor: pointer;
+}
+
+/* -------------- CONTACT SECTION QUERIES --------- */
+
+@container form (min-width: 600px) {
+    .form__form {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "name lastname"
+        "email email"
+        "message message"
+        "button button";
+        gap: 12px;
+    }
+
+    .form__input-container:first-child {
+        grid-area: name;
+    }
+
+    .form__input-container:nth-child(2) {
+        grid-area: lastname;
+    }
+
+    .form__input-container:nth-child(3) {
+        grid-area: email;
+    }
+
+    .form__input-container:nth-child(4) {
+        grid-area: message;
+    }
+
+    .form__input-container:nth-child(5) {
+        grid-area: button;
+    }
+
+}
+
+/* --------------- CONTACT SECTION ENDS ----------- */
+
+
+/* --------------- FOOTER SECTION --------------- */
+
+footer {
+    padding: 60px;
+    text-align: center;
+    background-color: var(--font-pred-color);
+    color: var(--back-pred-color);
+    font-size: 22px;
+}
+
+/* --------------- FOOTER SECTION QUERIES ------------ */
+
+/* --------------- FOOTER SECTION ENDS ---------------- */
