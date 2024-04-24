@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ANIMACIONES -->
+    <!-- Para empezar, se tiene un breve recordatorio de las transiciones, un truco con las trancisiones es que recordemos que nosotros podemos deterinar el tiempo de las mismas con: -->
+    <!--    transition: width 1s linear; -->
+    <!-- Recordemos que el width sería la propiedad que se modificaría en nuestra transición, pero de igual manera nosotros podemos definir un comportamiento diferente, es decir si nosotros colocamos el transition en el section, pero a parte dentro de la transición como el :hover o el :active nosotros colocamos: -->
+    <!--    transition-duration: 1s; -->
+    <!-- De esta manera nosotros estamos indicando que al momento de hacer el :hover o el :active nos tardará 1s en aumentar le width por ejemplo para una barra de carga, pero cuando ya no se haga la transición, nos tardará 2 segundos en volver a su estado original -->
+    <!-- También se puede hacer lo mismo, pero al revés para que el cargado sea más lento pero la vuelta sea más rápida -->
+    <!-- *** DATO INTERESANTE ***: Algunas personas que tienen epilepsia por ejemplo, tienen en chrome activada una opción para no mostrar animaciones, en este caso nosotros podemos definir esos comportamientos haciendo uso del: -->
+    <!-- @media (prefers-reduced-motion: reduce) {
+        
+    } -->
+    <!-- De esta manera como con cualquier otro MEDIA QUERIE, lo que hacemos es que si el usuario tiene activada la opción de no mostrar animaciones, pues lo que se determinaría sería el comportamiento de estas mismas -->
+
+    <!-- ANIMACIONES -->
+    <!-- La principal diferencia entre una animación y una transición, es que en el caso de las transiciones se necesita de algún disparador, es decir que se realice alguna acción para que estas ocurran, mientras que con las animaciones esto no es necesario, pueden ser ejecutadas de manera automática por ejemplo; aparta con la transición se tiene un estado inicial y un estado final, mientras que con las animaciones se tiene esos 2 estados, pero a aparte se pueden determinar aún más estados ocurridos en el medio -->
+    <!-- Un ejemplo para la creación de una animación es: -->
+        <!-- @keyframes nombre {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        } -->
+    <!-- Este sería un ejemplo sencillo de una animación, también se pueden usar porcentajes, o aumentar las cosas que pasarán en medio, por ejemplo: -->
+        <!-- @keyframes nombre {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 1;
+            }
+        } -->
+    <!-- Si queremos repetir una animación lo que se puede hacer es: -->
+    <!-- Primero podemos definir lo que sería:
+        animation-fill-mode: both; 
+    Esro define el comportamiento que tendrá la animación, para este caso puede ser both (es la que se suele usar, o forwards) -->
+    <!-- Una vez realizado esto, podemos determinar la cantidad de repeticiones que tendrá la animación, esto sería con: -->
+        <!-- animation-iteration-count: infinite; -->
+    <!-- De esta manera hemos indicado que se ejecutará de forma infinita, pero también podemos definir una cantidad de números -->
+    <!-- *** IMPORTANTE MENCIONAR QUE EL ANIMATION DELAY NO FUNCIONA CON LAS ITERACIONES, ES DECIR QUE ESTE SOLO SE EJECUTA LA PRIMERA VEZ Y DESPUÉS YA NO SE VUELVE A EJECUTAR *** -->
+    <!-- También se puede declarar la: -->
+    <!-- animation-direction: alternate; -->
+    <!-- Esto básicamente indica que va de un inicio a un fin, y vice versa, normal (por defecto) y reverse (lo ejecuta al revés), alternate-reverse (Lo mismo que el alternate solo que inicia desde el final) -->
+
+    <!-- Así mismo se puede usar lo que sería el animation-play-state: paused; -->
+    <!-- De esta manera pausaremos lo que es la animación, y por ejemplo si nosotros lo colocamos dentro de un :active pues se provocaría que la animación se pause al hacer click sobre el elemento -->
+    
+</body>
+</html>

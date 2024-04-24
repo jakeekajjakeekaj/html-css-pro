@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGINA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ANIMACIONES BASADAS EN SCROLL -->
+    <!-- Esto sería que mientras que el scroll vaya avanzando, se vaya realizando un diferente efecto, esto sería mejor checarlo por aparte, ya que se podría realizar a través de React o haciendo uso de JS, también se puede hacer únicamente con CSS -->
+    <!-- PARA TRABAJARLO CON SOLO CSS se puede aplicar un -->
+    <!-- animation-timeline: scroll(); -->
+    <!-- y de esta manera nuestra animación que ya estaba definida, irá progresando conforme al scroll -->
+    <!-- Si no se quiere tener la animación conforme al croll del body, sino que sea conforme al scroll de otro contenedor, debería de ser: -->
+    <!-- Dentro del contenedor, se debería declarar -->
+    <!-- scroll-timeline-name: --body; -->
+    <!-- scroll-timeline-axis: block; -->
+    <!-- Para el axis puede ser inline o block, todo depende de la dirección si se quiere en horizontal o vertical -->
+
+    <!-- VIEW -->
+    <!-- Así mismo, podemos definir una animación únicamente cuando el elemento es visible, para esto se puede hacer como ya se explicó arriba, pero si solo es con CSS, se puede realizar: -->
+    <!-- animation-timeline: view(); -->
+    <!-- Recordemos que antes era scroll(), pues ahora se sustituyó por view(), de esta manera la animación es basada en si el elemento se ve, y finaliza cuando se deja de ver -->
+
+    <!-- RANGO -->
+    <!-- Así mismo, si nosotros queremos que nuestra animación se ejecute con cierto "delay", podemos determinar un rango, si nosotros escribimos: -->
+    <!-- animation-range-start: cover 10%; -->
+    <!-- De esta manera al combinarlo con el view por ejemplo, le estamos indicando que a partir de cuando se comience a ver, tiene que pasar todavía un 10% en lo que sería el croll a partir del view para que ahora si la animación se comience a ejecutar -->
+    <!-- *** ASÍ COMO ESTAMOS INDICANDO QUE COMIENCE CON CIERTO "DELAY", TAMBIÉN LE PODEMOS INDICAR QUE FINALICE ANTES, esto sería: -->
+    <!-- animation-range-end: cover 80% -->
+    <!-- De esta manera le estamos indicando que finalice cuando lleve un 80% en vez del 100% que sería lo prodeterminado -->
+
+    <!-- De hecho una manera de hacer una especie de lazy load, pero que no es lazy load, es decir que solo mantiene una animación donde parece que las cosas se van cargando, sería definir la animación: -->
+    <!-- 
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+     -->
+     <!-- Y después dentro de la caja a la que se le aplicará el efecto, escribir lo siguiente: -->
+    <!--
+        animation: aparecer both;
+        animation-timeline: view();
+        animation-range: cover 10% contian 40%;
+    -->
+    
+</body>
+</html>
