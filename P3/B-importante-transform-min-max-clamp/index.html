@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- TRANSFORM -->
+    <!-- scale: 1.5; Cambia la escala de los tamaños -->
+    <!-- transform: scaleY(1.5); scale antes se encontraba dentro de transform, pero lo sacaron, solo que si solo se quiere estirar lo del eje x o y, aún sería declarándolo dentro de transform como se mostró, así mismo si delcaramos 2 valores dentro del scale fuera del transform, le estamos indicando cuánto se estirará en el eje x y y -->
+    <!-- skew(20deg); inclina a la imagen -->
+    <!-- rotate(20deg); esto rota a la imagen -->
+
+    <!-- MIN, MAX, CLAMP -->
+    <!-- Estas vendrpian siendo funciones de comparación, es decir: -->
+    <!-- width: min(900px, 100%); Esto lo que estaría indicando es que es una función, en donde el width tendrá el valor más pequeño, por ejemplo en la vista desktop nos tomaría un width de 900px, ya que probablemente el 100% pueda ser de 1080px o más en la vista desktop, entonces al enviar 2 parámetros siempre tomará el mínimo, lo cuál sería de 900px, sin embargo ahora supongamos que nos pasamos a un responsive en donde el ancho de la página ahora sería de 500px, pues ya no tomaría a los 900px, ya estaría tomando al 100%, ya que el 100% sería 500px, por lo tanto tomaría ese valor y de esa manera con el min ya estamos usando un elemento responsive -->
+
+    <!-- width: max(900px, 100%); Sería lo mismo que con el min, solo que ahora elegirá al más grande -->
+
+    <!-- Hoy en día realmente estos no son muy usados, ya que es necesario si o si declarar los minimos y máximos, en su alternativa lo que se suele usar es: -->
+    <!-- width: clamp(800px, 100%, 1600px); De esta manera estamos indicando que siempre que se pueda, se use el 100% de la pantalla, pero si es menor a 800px se usará un valor mínimo de 800px, pero si supera a los 1600px, tendrá un valor máximo de 1600px -->
+    <!-- De esta manera ya estamos trabajando con cajas flexibles sin necesidad de usar flex o grid o mediaqueries etc. -->
+    <!-- *** DE ESTA MANERA NOS ESTAMOS AHORRANDO A PONER width max-width min-width o cosas así -->
+
+    <!-- También es posible usarlo para los tamaños de letras, por ejemplo: -->
+    <!-- font-size: clamp(2.4rem, 2vw, 5rem); De esta manera el valor inicial y el valor final tiene que ir con medidas constantes, siendo los rem, y en el medio debería ser un valor relativo; de esta manera estamos indicando que el tamaño de letra será mínimo de 2.4rem, pero en la medida de lo posible se usará una medida de 2vw, es decir que mientras que el width sea más grande, el tamaño de letra se irá agrandando, sin embargo parará hasta llegar a un máximo de 5rem -->
+
+</body>
+</html>

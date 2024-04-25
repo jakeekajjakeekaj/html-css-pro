@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGINA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- FILTER Y BACKDROP-FILTER -->
+    <!-- Es importante comprender que muchas cosas que usa css al final son funciones, por ejemplo cuando nosotros usamos
+        background-image: url();
+    Lo que es url sería una función por ejemplo, detrás de este hay un código que se encarga de extraer e insertar la imagen que se encuentra en internet, es por esto que nosotros solo necesitamos anexar un dato de entrada (la url), así como funcionaría una función con parámetros -->
+
+    <!-- filter: drop shadow(0 0 15px #000);
+    Esto sería una función para aplicar una sombra, pero si se tiene una imagen con fondo transparente, la sombra se aplica al contorno de lo que es la imagen, de lo contrario se aplicaría a la caja (el fondo) -->
+    <!-- Existen muchos tipos de propiedades pertenecientes a filter, por ejemplo: -->
+    <!-- blur(10px); Aplica un desenfoque gausseano -->
+    <!-- brightness(0.8); Esto sería el brillo, 0 es ausencia del mismo, 1 sería el valor normal, pero incluso nos podemos pasar del valor de 1 para que ahora se presente una saturación con el brillo -->
+    <!-- contrast(3); 0 es sin la imagen, 1 es lo normal, y más arriba es una saturación del contraste, en donde los oscuros son más oscuros y los claros son más claros -->
+    <!-- saturate(0.7); Es lo mismo, 0 es ausencia, 1 es lo normal y más arriba es un exceso en la saturación -->
+    <!-- greyscale(0.5); Es lo mismo, cabe resaltar que con saturate se pueden conseguir resultados iguales, pero saturate puede ir más allá de 1 y saturar los colores mientras que con greyscale no -->
+    <!-- hue-rotate(20deg); Esto se tiene que indicar en grados y básicamente cambia lo que es la ruedita de la matriz para así ir modificando los colores -->
+    <!-- backdrop-filter: blur(10px); De esta manera se desenfoca, pero en vez de que se desenfoque el contenido, se desenfoca el fondo, pero lo interesante es que no funciona solo con blur, también funciona con la spropiedades dichas arriba, solo que se aplican al fondo en vez de en el contenido -->
+    <!-- filter: opacity(0.5); Esto es la opacidad -->
+    <!-- filter: invert(); Esto básicamente invierte los colores de la barra de colores, es decir que los negros se vuelven blancos, los rojos y cálidos pasan a ser fríos, etc. -->
+    <!-- filter: sepia(); Es un filtro sepia xd -->
+    <!-- De igual manera se pueden poner diferentes propiedades únicamente separadas con espacios -->
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGINA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- INTRODUCCIÓN AL WEB HOSTING -->
+    <!-- Esto ya se vió en el curso de WEB HOSTING, sin embargo se verá un muy breve resumen -->
+
+    <!-- Hosting compartido: Aloja múltiples archivos en un solo servidor, es decir que dentro de un servidor, pueden haber otros 30 sitios web, es la opción más económica y es ideal para páginas de comercio pequeñas o páginas personales -->
+
+    <!-- VPS: Es un paso intermedio, agarra un servidor y lo divide en máquinas virtuales con recursos asignados (es decir que lo que se te dice que vas a contratar, eso lo tendrás siempre, mientras que con el compartido son los recursos para todos), es ideal para empresas medianas que lleven un poco más de tráfico por ejemplo -->
+
+    <!-- Hosting Dedicado: Tiene un servidor completo para el cliente, esto sería ideal para empresas grandes que mueven muchos tipos de datos por ejemplo -->
+
+    <!-- Cloud Hosting: Distribuye todo el tráfico a través de una red de servidores que hace que todo sea mucho más escalable y flexible, ideal para cosas que tendrán un boom cada cierto tiempo por ejemplo, por ejemplo cuando llega el black friday; por esto necesitarías que justamente todo se adapte a la cantidad de gente que entrará a tu página -->
+
+    <!-- *** Hosting Especializado: Este no fue mencionado en el curso de hosting, es un hosting optimizado para cosas específicas, lo más normal de uno es usarlo por ejemplo para Wordpress -->
+
+    <!-- *** CDN: Esto básicamente indica cómo se almacenarán las cosas a través de múltiples servidores para que así de manera estratégica se pueda acceder al contenido de forma más eficiente -->
+
+    <!-- *** La IP dedicada, básicmanete es una IP fija, esta no se cambia y desde el ordenador podemos escribir la IP y accedemos al sitio, esto como tal la gente no suele hacerlo, ya que no se suele escribir la IP, pero algunas API por ejemplo para funcionar correctamente tienen que escribir una IP dedicada, a su vez anteriormente los certificados SSL, necesitaban una IP dedicada para funcionar (para poder tener el candadito en la zona superior izquierda), pero gracias a una extensión llamada SNI esto ya no es necesario, ahora se entiene que los hosting compartidos pueden tener estos SSL gracias a esta extensión; sin embargo tomando en cuenta que gracias a esta extensión se resuelven estos problemas y los usuarios no suelen escribir la dirección IP, ¿En qué nos ayuda tener una IP dedicada?
+    La ventaja de tener una IP dedicada es enviar correos corporativos y que no sean afectados, es decir:
+    Si se tiene un hosting compartido, y pag1 envía correos como SPAM a muchos usuarios y Google lo detecta y automáticamente lo mete como SPAM, si ahora la pag2 quiere enviar un correo, los correos de pag2 aparecerán muy probablmente como SPAM, ya que se detecta que pag1 y pag2 son provenientes del mismo servidor, por lo tanto este SPAM estaría afectando a todas las páginas de este mismo servidor, cosa que al tener una IP dedicada ya no pasaría, sin embargo muchas veces no es necesario realizar este gasto, ya que dependiendo del servicio de hosting ellos pueden meterse desde antes, en el caso de hostinger bloquea a los usuarios que se dedican a hacer SPAM -->
+
+
+    <!-- ** FTP: Significa File Transfer Protocol y básicamente significa Protocolo de Transferencia de Archivos, lo que hace es que la carga de archivos o administración de los mismos, sea tan simple como si se hiciera desde la propia computadora, facilitando así la transferencia entre el cliente-servidor -->
+
+    <!-- SFTP: Sif¿gnifica que es una versión segura, básicamente está cifrado y sería FTP + SSH -->
+
+    <!-- FTPS: Es lo mismo, una versión segura FTP + SSL, como el HTTPS -->
+
+    <!-- Esto justamente se encarga de cifrar y así proteger tus credenciales, no es recomendable usar FTP sin ninguna de estas capas de seguridad -->
+
+    <!-- Un buen FTP sería FileZilla por ejemplo -->
+    
+</body>
+</html>

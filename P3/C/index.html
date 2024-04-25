@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- VARIABLES -->
+    <!-- Esto ya lo conoces, que serían las custom properties declaradas con el :root -->
+    <!-- *** Dato curioso, las variables no tienen que ser necesariamente declaradas en el :root, también pueden ser declaradas dentro de otras boxes y de esta manera todos los hijos de estas boxes heredarán a estas variables, pero no las otras boxes; se puede ver como las variables declaradas de manera global y las declaradas dentro de funciones -->
+
+    <!-- CALC -->
+    <!-- Cabe resaltar que el calc NO ES CONSIDERADO UNA MALA PRÁCTICA, antes si ya que se tenían recursos más limitados, pero actualmente ya no es así, un ejemplo puede ser: -->
+    <!-- font-size: calc(100% - 90px); De esta manera se está trabajando con medidas dinámicas a la par de medidas constantes -->
+
+    <!-- *** DATO INTERESANTE: -->
+    <!-- Nostros podemos hacer uso del calc junto con el clamp, es decir:
+        calc(100vh - clamp(2.4rem, 2.2vw, 4rem)); Y de esta manera estamos diciendo que se va a obtener el valor de 100vh pero este se va a restar por el valor que devuelva clamp, lo que sería un mínimo de 2.4rem o un valor ideal de 2.2vw o un valor máximo de 4rem, todo depende del vw -->
+    
+</body>
+</html>
