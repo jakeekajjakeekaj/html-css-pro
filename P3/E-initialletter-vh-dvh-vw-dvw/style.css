@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eee;
+    font-family: sans-serif;
+}
+
+.initial-letter-box {
+    font-size: 30px;
+    padding: 0 40px;
+}
+
+/* Esto tiene que ir si o si con el ::first-letter, esto porque así le estamos indicando que será aplicado a la primer letra, después de esto ahora si podemos utilizar nuestro initial-letter, en donde lo podemos dejar con un solo número para indicar cuántas lineas abarcará, o nosotros podemos definir el tamaño, por ejemplo en este caso estamos diciendo 3 y 2, osea que tendrá un tamaño de 3 lineas, pero será colocado en la linea 2, es decir que el primer valor es la cantidad de lineas que se usarán, mientras que el segundo valor es para indicar desde qué línea de ocupará */
+.initial-letter-box p::first-letter {
+    initial-letter: 3 2;
+}

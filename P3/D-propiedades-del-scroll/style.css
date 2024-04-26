@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eee;
+    font-family: sans-serif;
+}
+
+.box {
+    font-size: 30px;
+    padding: 0 40px;
+    border: 6px solid #000;
+    width: 50vw;
+    height: 100vh;
+    overflow: scroll;
+    /* ESTO ALENTA EL MOVIMIENTO DE LOS SCROLL, SI POR EJEMPLO TENEMOS LINKS PARA SUBIR Y BAJAR EN LA PROPIA PÁGINA, ESTE COMPORTAMIENTO DEL SCROLL NOS AYUDA A QUE SE HAGA UN MOVIMIENTO SUAVE EN VEZ DE BRUSCO, CON JS SE PUEDE MODIFICAR EL TIEMPO Y ESE TIPO DE PROPIEDADES */
+    scroll-behavior: smooth;
+    /* De esta manera podemos modificar el color del scroll y el del fondo del scroll, es muy importante definir los 2 colores ya que de lo contrario no funcionará */
+    scrollbar-color: #c00 #ccc;
+    /* El siguiente define el tamño del scroll, existen 3 propiedades
+    auto: define por automático el comportamient (el predeterminado)
+    thin: vuelve la barra más delgada
+    none: no se muestra la barra, si está y si funciona, pero es como si fuera full transparente */
+    scrollbar-width: none;
+}
+
+.crecer {
+    height: 200vh;
+}
