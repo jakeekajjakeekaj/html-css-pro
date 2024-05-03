@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: sans-serif;
+
+    --bg-color: color-mix(in srgb, #f62 70%, #fff);
+    --card-bg-color: #eee;
+    --card-bg-color-trans: #eee5;
+    --dark-color: #f62;
+    --text-color: #444;
+}
+
+.card__front {
+    transform: perspective(900px) rotateY(0deg);
+}
+
+.card {
+    max-width: clamp(300px, 50%, 360px);
+    background-color: var(--card-bg-color-trans);
+    margin: 50px auto;
+    position: relative;
+    border-radius: 20px;
+    /* overflow: hidden; */
+    box-shadow:
+    rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.card:hover .card__front {
+    /* LA PERSPECTIVA SE ENCARGA DIGAMOS DE ALEJAR O ACERCAR AL ELEMENTO A NUESTRA CARA, SI NOSOTROS TTENEMOS UNA PERSPECTIVA DE 200PX, parecerá como si el extremo de la card nos fuera a golpear, mientras que si lo manejamos en 1200px pues el giro se hace desde más distancia */
+    transform: perspective(1200px) rotateY(180deg);
+
+}
+
+.card__worker {
+    max-height: 200px;
+    overflow: hidden;
+    border-bottom: 2px solid var(--bg-color);
+}
+
+.card__worker img {
+    max-width: 100%;
+}
+
+.card__data {
+    padding: 12px;
+}
+
+.card__data span {
+    font-size: 1.4rem;
+    margin: 6px 0;
+    display: block;
+}
+
+.card__back {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    transform: perspective(1200px) rotateY(180deg);
+}
+
+.card__back span {
+    font-size: 1.5rem;
+}
+
+.card__back > span ~ p {
+    margin: 8px 0 20px;
+}
+
+.card:hover .card__back {
+    transform: perspective(1200px) rotateY(360deg);
+}
+
+.card__back,
+.card__front {
+    /* EL BACKFACE-VISIBILITY BÁSICAMENTE ES EL NAVEGADOR RECONOCIENDO CUANDO ALGO ESTÁ DE ESPALDAS, ES DECIR si en nuestra perspective rotateY nosotros tenemos 60deg, pues aquí si se mostraría, pero si se detecta que son 180deg (ES DECIR QUE ESTÁ VOLTEADA), pues el navegador lo reconoce y la acción que se toma es ocultarlo gracias a la línea de abajo */
+    backface-visibility: hidden;
+    transition: transform 1s;
+    background-color: var(--card-bg-color);
+    border-radius: 20px;
+}
+
+.skill-bar {
+    border: 3px solid var(--bg-color);
+    margin: 12px 12px;
+    padding: 2px;
+    border-radius: 7px;
+}
+
+.skill-bar div {
+    background-color: var(--bg-color);
+    padding: 9px;
+    border-radius: 4px;
+    color: var(--card-bg-color);
+}
+
+.skill-bar:first-child div {
+    width: 90%;
+}
+
+.skill-bar:nth-child(2) div {
+    width: 80%;
+}
+
+.skill-bar:last-child div {
+    width: 70%;
+}

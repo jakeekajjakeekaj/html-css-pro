@@ -39,6 +39,18 @@ body {
     right: -1rem;
 }
 
+.sidebar__form .sidebar__open-button {
+    display: none;
+}
+
+.sidebar:has(input[type="checkbox"]:checked) .sidebar__form label {
+    display: none;
+}
+
+.sidebar:has(input[type="checkbox"]:checked) .sidebar__form .sidebar__open-button {
+    display: block;
+}
+
 input[type="checkbox"] {
     display: none;
 }
@@ -50,6 +62,14 @@ input[type="checkbox"] {
     font-size: 2rem;
     border-radius: 50%;
     padding: .4rem;
+    /* top: -24px; */
+    top: 0;
+}
+
+.sidebar:has(input[type="checkbox"]:checked) .sidebar__form {
+    right: -1.6rem;
+    top: 6rem;
+    width: fit-content;
 }
 
 .sidebar label::before,
@@ -80,11 +100,41 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked ~ label {
     color: var(--bg-color);
     background-color: var(--sidebar-color);
+    top: -26px;
 }
 
-input[type="checkbox"]:checked ~ label::before,
+/* input[type="checkbox"]:checked ~ label::before,
 input[type="checkbox"]:checked ~ label::after {
     display: none;
+} */
+
+input[type="checkbox"]:checked ~ label::before {
+    left: 19.5px;
+    top: -24px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 25px;
+    box-shadow: -4px 4px 0 4px var(--sidebar-color);
+}
+
+input[type="checkbox"]:checked ~ label::after {
+    bottom: -24px;
+    left: 19.5px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 25px;
+    box-shadow: -4px -4px 0 4px var(--sidebar-color);
+}
+
+.sidebar:has(input[type="checkbox"]:checked) {
+    width: fit-content;
+}
+
+.sidebar:has(input[type="checkbox"]:checked) :is(.sidebar__item a, .profile-option) {
+    display: none;
+}
+
+.sidebar:has(input[type="checkbox"]:checked) picture {
+    width: fit-content;
+    margin-left: .75rem;
 }
 
 /* ++++++ SIDEBAR__PICTURE STYLES ++++++++ */
@@ -95,10 +145,19 @@ input[type="checkbox"]:checked ~ label::after {
     z-index: 10;
 }
 
+.sidebar:has(input[type="checkbox"]:checked) .sidebar__picture {
+    margin: 0;
+}
+
 .sidebar__picture img {
     width: clamp(4rem, 75%, 20rem);
     margin: auto;
     opacity: 0.82;
+}
+
+.sidebar:has(input[type="checkbox"]:checked) .sidebar__picture img {
+    /* display: none; */
+    max-width: 3rem;
 }
 
 /* ************ ENDS SIDEBAR__PICTURE STYLES ************ */
@@ -166,6 +225,10 @@ input[type="checkbox"]:checked ~ label::after {
     box-shadow: 4px -4px 0 4px var(--bg-color);
 }
 
+.sidebar:has(input[type="checkbox"]:checked) .sidebar__item {
+    margin: 0 auto 5px;
+}
+
 /* ++++++++++ SIDEBAR__PROFILE MENU STYLES ++++++++++++ */
 
 .sidebar__profile img {
@@ -179,6 +242,8 @@ input[type="checkbox"]:checked ~ label::after {
     margin: 12px;
     color: var(--text-color);
 }
+
+
 
 .item--profile:hover {
     border-radius: 25px;

@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: sans-serif;
+
+    --bg-color: color-mix(in srgb, #f62 70%, #fff);
+    --chat-bg-color: #eee;
+    --dark-color: #f62;
+}
+
+.chat {
+    max-width: clamp(300px, 70%, 870px);
+    background-color: var(--chat-bg-color);
+    margin: 50px auto;
+    border-radius: 20px;
+}
+
+.chat__user {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--dark-color);
+}
+
+.chat__user img {
+    background-color: var(--bg-color);
+    max-width: 2.6rem;
+    border-radius: 50%;
+    box-shadow:
+    rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    margin: 4px;
+}
+
+.chat__content {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat__msg {
+    background-color: var(--bg-color);
+    color: var(--chat-bg-color);
+    font-size: .6rem;
+    padding: 7px;
+    position: relative;
+    z-index: 10;
+    max-width: clamp(300px, 70%, 600px);
+    margin: 6px;
+    width: fit-content;
+}
+
+.chat__msg::before {
+    content: '';
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    bottom: -6px;
+    z-index: -1;
+}
+
+.chat__msg.sent {
+    margin-right: 30px;
+    border-radius: 9px 9px 9px 0;
+}
+
+.chat__msg.sent::before {
+    background-color: var(--bg-color);
+    left: -6px;
+    clip-path: polygon(40% 0, 0% 100%, 100% 65%);
+}
+
+.chat__msg.recived {
+    margin-left: 30px;
+    background-color: var(--dark-color);
+    align-self: end;
+    border-radius: 9px 9px 0 9px;
+}
+
+.chat__msg.recived::before {
+    background-color: var(--dark-color);
+    left: auto;
+    right: -6px;
+    clip-path: polygon(60% 0, 100% 100%, 0 65%);
+}
