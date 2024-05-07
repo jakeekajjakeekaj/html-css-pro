@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--bg-color);
+    height: 200dvh;
+    /* RECORDEMOS QUE EL linear-gradient NOS AYUDA EN ESTE CASO A OSCURECER EL FONDO */
+    background-image: linear-gradient(#0008, #0008), url(https://www.egames.news/__export/1602353060245/sites/debate/img/2020/10/10/among_us_wallpaper_by_xdrawings_al_azar_de6mdi5-fullview_1_crop1602352944668.jpg_759710130.jpg);
+
+    --bg-color: #ff9464;
+    --chat-bg-color: #eee;
+    --dark-color: #f62;
+}
+
+header {
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    /* EL greyscale HACE UN ESCALADO DE GRISES */
+    filter: grayscale();
+    /* El mix-blend-mode tiene varios efectos, en este caso el 'screen' provoca que los pixeles del fondo se "fusionen" con los de la imagen, MIENTRAS QUE SI JUNTAMOS EL greyscale JUNTO CON EL mix.blend-mode: saturation, PODEMOS TENER UNA ESPECIE DE SOMBRA */
+    /* mix-blend-mode: screen; */
+    position: fixed;
+    top: 0;
+    animation: aparecer;
+    animation-timeline: scroll();
+    max-height: 100dvh;
+    /* position: absolute; */
+}
+
+.text-container {
+    min-height: 70dvh;
+    /* max-height: 100dvh; */
+    position: fixed;
+    top: 0;
+    display: flex;
+    font-size: clamp(1rem, 10dvw, 10rem);
+    color: #444;
+    /* El darken, oscurece los pixeles del fondo con los del frente para que así salga como una especie de combinación entre ambos */
+    /* mix-blend-mode: lighten; */
+    font-weight: 700;
+    justify-content: space-between;
+    width: 100%;
+    align-items: end;
+    padding: 2dvw;
+    animation: aparecer-texto both;
+    animation-timeline: scroll();
+}
+
+.left-text {
+    color: #e84;
+    box-shadow: rgba(255, 255, 255, 0.9) 1px -1px 5px 2px;
+    /* box-shadow: rgba(255, 255, 255, 0.3) 0px 0px 0px 3px; */
+    padding: 7px 15px;
+    background: linear-gradient(#0009, #0009);
+    /* #ddd4 */
+    /* backdrop-filter: blur(20px); */
+    /* filter: drop-shadow(rgba(0, 0, 0, 0.16) 0px 1px 4px); */
+}
+
+.right-text {
+    color: #4e8;
+    box-shadow: rgba(255, 255, 255, 0.9) -1px -1px 5px 2px;
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+    padding: 7px 15px;
+    background: linear-gradient(#0009, #0009);
+    /* backdrop-filter: blur(20px); */
+
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        translate: 0 -20%;
+        scale: .8;
+    }
+    100% {
+        opacity: 1;
+        mix-blend-mode: initial;
+        filter: none;
+        translate: 0 0;
+        scale: 1;
+    }
+}
+
+@keyframes aparecer-texto {
+    0% {
+        opacity: 0;
+        translate: 0 20%;
+        scale: 1.2;
+        /* backdrop-filter: blur(20px); */
+    }
+    100% {
+        opacity: 1;
+        translate: 0 0;
+        scale: 1;
+        /* backdrop-filter: blur(20px); */
+    }
+}
